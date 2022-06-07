@@ -1,6 +1,7 @@
 import React from "react";
 import { ShowText } from "./components/ShowText";
 import { Blog } from "./components/Blog";
+import BlogRouter from "./components/Blog/BlogRouter";
 import { NavBar } from "./components/NavBar";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -16,8 +17,9 @@ function App() {
             element={
               <ShowText text="We're making some changes... new site coming soon!" />
             }
-          ></Route>
-          <Route path="blog" element={<Blog />}></Route>
+          />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<BlogRouter />} />
         </Routes>
       </Router>
     </div>

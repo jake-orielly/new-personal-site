@@ -1,11 +1,11 @@
 import React from "react";
 
 interface Props {
-  children: any;
+  children?: JSX.Element;
 }
 
 const BlogPost = ({ children }: Props) => {
-  return <div>{children()}</div>;
+  return <div>{children}</div>;
 };
 
 export default BlogPost;

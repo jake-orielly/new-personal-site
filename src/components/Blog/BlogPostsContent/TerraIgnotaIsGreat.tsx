@@ -1,9 +1,9 @@
-export const BlueCheeseIsGoodPost = {
-  link: "blue-cheese-is-good",
+export const TerraIgnotaIsGreatPost = {
+  link: "terra-ignota-is-great",
   post: () => {
     return (
       <div>
-        <p>Blue Cheese Is Good Actually</p>
+        <p>Terra Ignota is amazing!</p>
         <p>And here's why.</p>
       </div>
     );
@@ -11,7 +11,7 @@ export const BlueCheeseIsGoodPost = {
   preview: () => {
     return (
       <div>
-        <p>Blue Cheese Is Good!</p>
+        <p>Terra Ignota is a masterpiece!</p>
       </div>
     );
   },

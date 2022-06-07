@@ -1,10 +1,18 @@
 import BlogPostPreview from "./BlogPostPreview";
-import { BlueCheeseIsGoodPreview } from "./BlogPostsContent";
+import { BlogPostLinkArr } from "./BlogPostLinkArr";
 
 export const Blog = () => {
   return (
     <div>
-      <BlogPostPreview children={BlueCheeseIsGoodPreview} />
+      {BlogPostLinkArr.map((post) => {
+        return (
+          <BlogPostPreview
+            key={post.link}
+            children={post.preview}
+            postLink={post.link}
+          />
+        );
+      })}
     </div>
   );
 };
