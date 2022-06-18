@@ -1,7 +1,8 @@
 import React from "react";
-import { ShowText } from "./components/ShowText";
+import { HomePage } from "./components/HomePage";
 import { Blog } from "./components/Blog";
 import BlogRouter from "./components/Blog/BlogRouter";
+import { Bookshelf } from "./components/Bookshelf";
 import { NavBar } from "./components/NavBar";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -12,14 +13,10 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route
-            path=""
-            element={
-              <ShowText text="We're making some changes... new site coming soon!" />
-            }
-          />
+          <Route path="" element={<HomePage />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<BlogRouter />} />
+          <Route path="recentReads" element={<Bookshelf />} />
         </Routes>
       </Router>
     </div>
