@@ -10,12 +10,7 @@ import {
   restAnd,
 } from "./images";
 
-interface Book {
-    title: string;
-    authorFirst: string;
-    authorLast: string;
-    coverImage: string;
-  }
+import { Book } from './types';
 
 export const bookList: Book[] = sortBy(
     [
@@ -56,7 +51,7 @@ export const bookList: Book[] = sortBy(
         coverImage: wildSeed,
       },
       {
-        title: "An artist of the Floating World",
+        title: "An Artist of the Floating World",
         authorFirst: "Kazuo",
         authorLast: "Ishiguro",
         coverImage: anArtist,

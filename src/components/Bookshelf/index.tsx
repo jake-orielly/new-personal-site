@@ -1,6 +1,9 @@
 import { makeStyles } from "@material-ui/styles";
 import { useState } from "react";
 import { bookList } from "./bookList";
+import { Book } from "./types";
+import { SelectedBookDisplay } from "./SelectedBookDisplay";
+import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
   bookshelfContainer: {
@@ -22,8 +25,8 @@ const useStyles = makeStyles(() => ({
     float: "left",
     zIndex: 1,
 
-    "&:hover": {
-      filter: "brightness(80%)",
+    "&:hover,&.selected": {
+      filter: "brightness(75%)",
       transition: "all 0.3s ease",
     },
   },
@@ -32,26 +35,30 @@ const useStyles = makeStyles(() => ({
 export const Bookshelf = () => {
   const classes = useStyles();
 
-  const [selectedBook, setSelectedBook] = useState<number | undefined>();
+  const [selectedBook, setSelectedBook] = useState<Book | undefined>();
 
   return (
     <div>
       <div className={classes.bookshelfContainer}>
         <div className={classes.bookshelf}>
-          {bookList.map((book, i) => (
+          {bookList.map((book) => (
             <div
-              className={classes.book}
+              className={clsx(
+                classes.book,
+                book === selectedBook && "selected"
+              )}
               key={book.title}
               style={{
                 backgroundImage: `url(${book.coverImage})`,
               }}
               onClick={() => {
-                setSelectedBook(i);
+                setSelectedBook(book);
               }}
             ></div>
           ))}
         </div>
       </div>
+      {selectedBook && <SelectedBookDisplay book={selectedBook} />}
     </div>
   );
 };
