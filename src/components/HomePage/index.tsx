@@ -1,13 +1,28 @@
 import { makeStyles } from "@material-ui/core/styles";
+import mountains from "./mountains.jpg";
 
 export const useStyles = makeStyles(() => ({
-  nameText: {
-    marginTop: "8rem",
-    fontSize: "2.6rem",
-  },
-  descriptionText: {
-    marginTop: "3rem",
-    fontSize: "1.6rem",
+  root: {
+    "& h1": {
+      marginTop: "8rem",
+      marginBottom: "3rem",
+      fontSize: "3.6rem",
+      letterSpacing: "0.35rem",
+    },
+    "& h2, & h3": {
+      padding: "0.5rem",
+    },
+    "& h3": {
+      fontSize: "1rem",
+      fontStyle: "italic",
+    },
+    "& img": {
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      boxShadow: "0px -1px 6px rgb(50 50 50 / 25%)",
+    },
   },
 }));
 
@@ -15,12 +30,13 @@ export const HomePage = () => {
   const classes = useStyles();
 
   return (
-    <div>
-      <h1 className={classes.nameText}>My name is Jake O'Rielly.</h1>
-      <h2 className={classes.descriptionText}>
-        I'm a full stack software engineer, short fiction writer, and avid novel
-        reader based in San Francisco.
-      </h2>
+    <div className={classes.root}>
+      <h1> Jake O'Rielly</h1>
+      <h2>Full stack software engineer</h2>
+      <h2>Short fiction writer</h2>
+      <h2>Outdoorsman</h2>
+      <h3>San Francisco, CA</h3>
+      <img src={mountains} alt="" />
     </div>
   );
 };
