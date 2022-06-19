@@ -34,6 +34,7 @@ export const NavBar = () => {
         <Link to="/">{"Home Page"}</Link>
         <Link to="/blog">{"Blog"}</Link>
         <Link to="/recentReads">{"Recent Reads"}</Link>
+        <Link to="/contact">{"Contact"}</Link>
       </nav>
     </div>
   );
